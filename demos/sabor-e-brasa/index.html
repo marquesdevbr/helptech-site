@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabor &amp; Brasa — Restaurante (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de um restaurante fictício com cardápio, reservas e informações de funcionamento.">
+  <meta name="theme-color" content="#14100d">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. O restaurante, os pratos e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">Sabor <span>&amp;</span> Brasa</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">Nossa cozinha</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#reservas">Contato</a></li>
+        <li><a class="btn btn-primary" href="#reservas">Reservar mesa</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Fogo, fumaça e <em>sabor</em> de verdade.</h1>
+          <p class="lead">Carnes na brasa, pratos da casa e um ambiente feito para ficar. Venha almoçar, jantar ou comemorar com a gente.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#reservas">Reservar uma mesa</a>
+            <a class="btn btn-ghost" href="#cardapio">Ver o cardápio</a>
+          </div>
+        </div>
+
+        <!-- Ilustração: prato com chama (desenhada em SVG, sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <defs>
+              <radialGradient id="plate" cx="50%" cy="40%" r="65%">
+                <stop offset="0" stop-color="#3a2a1f"/><stop offset="1" stop-color="#1b1511"/>
+              </radialGradient>
+              <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0" stop-color="#e8590c"/><stop offset="0.6" stop-color="#ff8a3d"/><stop offset="1" stop-color="#f2b45a"/>
+              </linearGradient>
+              <linearGradient id="steak" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8c3b1c"/><stop offset="1" stop-color="#4a1c0c"/>
+              </linearGradient>
+            </defs>
+            <circle cx="200" cy="215" r="170" fill="url(#plate)" stroke="#f6efe6" stroke-opacity=".15" stroke-width="2"/>
+            <circle cx="200" cy="215" r="132" fill="none" stroke="#f6efe6" stroke-opacity=".12" stroke-width="2"/>
+            <!-- carne -->
+            <path d="M118 238c-6-38 28-72 76-76 52-4 94 22 90 66-4 42-48 66-96 64-38-2-66-20-70-54z" fill="url(#steak)"/>
+            <path d="M150 215c22-14 54-18 86-8M146 240c28-10 62-12 96-2M162 264c24-6 52-6 76 2" fill="none" stroke="#f2b45a" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+            <!-- chama -->
+            <path d="M200 40c10 34 44 52 44 92 0 30-20 52-44 52s-44-22-44-52c0-20 10-30 18-44 4 14 12 20 20 22-6-28 0-50 6-70z" fill="url(#flame)"/>
+            <path d="M200 100c6 18 22 28 22 48 0 14-10 24-22 24s-22-10-22-24c0-10 6-16 10-24 2 8 6 10 10 12-2-14 0-26 2-36z" fill="#fff3d6" fill-opacity=".85"/>
+            <!-- ervas -->
+            <g fill="#51a35f"><ellipse cx="258" cy="270" rx="16" ry="7" transform="rotate(-30 258 270)"/><ellipse cx="276" cy="256" rx="14" ry="6" transform="rotate(20 276 256)"/><ellipse cx="146" cy="278" rx="14" ry="6" transform="rotate(25 146 278)"/></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA COZINHA -->
+    <section class="section alt" id="sobre">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Nossa cozinha</span>
+          <h2>Feito na hora, do jeito que deve ser</h2>
+          <p class="lead">Tudo aqui começa com ingrediente fresco e termina na brasa. Sem pressa, sem atalho.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 4.5 5 4.5 9a4.5 4.5 0 0 1-9 0c0-2 1-3 1.8-4.4.4 1.4 1.2 2 2 2.2C11 7 11.4 5 12 3z"/></svg></div>
+            <h3>Fogo de verdade</h3>
+            <p>Carnes e legumes assados na brasa, no ponto que você pedir.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20c0-8 6-14 15-15 0 9-6 15-15 15zM5 20c3-5 6-8 10-10"/></svg></div>
+            <h3>Ingredientes frescos</h3>
+            <p>Cardápio que respeita a estação e prioriza produtos de qualidade.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.7 6 5.5"/></svg></div>
+            <h3>Ambiente acolhedor</h3>
+            <p>Mesas para casais, famílias e grupos, com atendimento atencioso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section" id="destaques">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Destaques da casa</span>
+          <h2>Os pratos que todo mundo pede</h2>
+        </div>
+
+        <div class="highlights">
+          <!-- Cada destaque define suas cores em --c1 e --c2 -->
+          <article class="highlight reveal" style="--c1:#8c3b1c; --c2:#e8590c;">
+            <div class="highlight-art" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 4.5 5 4.5 9a4.5 4.5 0 0 1-9 0c0-2 1-3 1.8-4.4.4 1.4 1.2 2 2 2.2C11 7 11.4 5 12 3z"/></svg>
+            </div>
+            <div class="highlight-body">
+              <h3>Picanha na brasa</h3>
+              <p>Corte macio e suculento, servido com arroz, farofa e vinagrete. Serve duas pessoas.</p>
+              <span class="price">R$ 119</span>
+            </div>
+          </article>
+
+          <article class="highlight reveal" style="--c1:#5b3a29; --c2:#b8742f;">
+            <div class="highlight-art" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 15c0-4 4-7 9-7s9 3 9 7zM2 15h20M5 18h14M9 8c0-2 1-3 3-3"/></svg>
+            </div>
+            <div class="highlight-body">
+              <h3>Costela assada por 8 horas</h3>
+              <p>Cozimento lento até soltar do osso, com purê rústico e molho da casa.</p>
+              <span class="price">R$ 74</span>
+            </div>
+          </article>
+
+          <article class="highlight reveal" style="--c1:#3d2b4a; --c2:#a0457a;">
+            <div class="highlight-art" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 11h16l-1.5 8a2 2 0 0 1-2 1.6h-9a2 2 0 0 1-2-1.6zM7 11c0-3 2-5 5-5s5 2 5 5M12 6V3"/></svg>
+            </div>
+            <div class="highlight-body">
+              <h3>Petit gâteau</h3>
+              <p>Casquinha crocante, centro de chocolate derretido e sorvete de creme.</p>
+              <span class="price">R$ 29</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO (abas — lógica em script.js) -->
+    <section class="section alt" id="cardapio">
+      <div class="container">
+        <div class="center reveal" style="text-align:center;">
+          <span class="eyebrow">Cardápio</span>
+          <h2>Escolha o que combina com o seu dia</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Categorias do cardápio">
+          <button class="tab" role="tab" id="tab-entradas" aria-selected="true" aria-controls="painel-entradas" tabindex="0">Entradas</button>
+          <button class="tab" role="tab" id="tab-pratos" aria-selected="false" aria-controls="painel-pratos" tabindex="-1">Pratos</button>
+          <button class="tab" role="tab" id="tab-sobremesas" aria-selected="false" aria-controls="painel-sobremesas" tabindex="-1">Sobremesas</button>
+          <button class="tab" role="tab" id="tab-bebidas" aria-selected="false" aria-controls="painel-bebidas" tabindex="-1">Bebidas</button>
+        </div>
+
+        <div class="menu-panel" role="tabpanel" id="painel-entradas" aria-labelledby="tab-entradas">
+          <ul class="menu-list">
+            <li class="dish"><h3>Bruschetta de tomate</h3><span class="leader"></span><span class="price">R$ 28</span><p>Pão italiano tostado, tomate fresco, manjericão e azeite.</p></li>
+            <li class="dish"><h3>Bolinho de costela</h3><span class="leader"></span><span class="price">R$ 36</span><p>Seis unidades, com geleia de pimenta.</p></li>
+            <li class="dish"><h3>Salada da casa</h3><span class="leader"></span><span class="price">R$ 24</span><p>Folhas, tomate cereja, queijo coalho grelhado e molho de mel e mostarda.</p></li>
+          </ul>
+        </div>
+
+        <div class="menu-panel" role="tabpanel" id="painel-pratos" aria-labelledby="tab-pratos" hidden>
+          <ul class="menu-list">
+            <li class="dish"><h3>Picanha na brasa (para 2)</h3><span class="leader"></span><span class="price">R$ 119</span><p>Arroz, farofa, vinagrete e batata rústica.</p></li>
+            <li class="dish"><h3>Costela assada 8h</h3><span class="leader"></span><span class="price">R$ 74</span><p>Purê rústico e molho da casa.</p></li>
+            <li class="dish"><h3>Risoto de cogumelos</h3><span class="leader"></span><span class="price">R$ 62</span><p>Arroz arbóreo, mix de cogumelos e parmesão.</p></li>
+            <li class="dish"><h3>Peixe grelhado</h3><span class="leader"></span><span class="price">R$ 68</span><p>Acompanha legumes salteados e arroz de ervas.</p></li>
+          </ul>
+        </div>
+
+        <div class="menu-panel" role="tabpanel" id="painel-sobremesas" aria-labelledby="tab-sobremesas" hidden>
+          <ul class="menu-list">
+            <li class="dish"><h3>Petit gâteau</h3><span class="leader"></span><span class="price">R$ 29</span><p>Com sorvete de creme.</p></li>
+            <li class="dish"><h3>Pudim da casa</h3><span class="leader"></span><span class="price">R$ 18</span><p>Receita de família, com calda de caramelo.</p></li>
+            <li class="dish"><h3>Sorvete artesanal</h3><span class="leader"></span><span class="price">R$ 20</span><p>Três bolas, sabores do dia.</p></li>
+          </ul>
+        </div>
+
+        <div class="menu-panel" role="tabpanel" id="painel-bebidas" aria-labelledby="tab-bebidas" hidden>
+          <ul class="menu-list">
+            <li class="dish"><h3>Suco natural</h3><span class="leader"></span><span class="price">R$ 14</span><p>Laranja, abacaxi com hortelã ou maracujá.</p></li>
+            <li class="dish"><h3>Limonada com hortelã</h3><span class="leader"></span><span class="price">R$ 12</span><p>Feita na hora.</p></li>
+            <li class="dish"><h3>Refrigerante</h3><span class="leader"></span><span class="price">R$ 9</span><p>Lata 350 ml.</p></li>
+            <li class="dish"><h3>Cerveja artesanal</h3><span class="leader"></span><span class="price">R$ 22</span><p>Consulte os rótulos do dia.</p></li>
+          </ul>
+        </div>
+
+        <p class="menu-note">Pratos e valores fictícios, criados para esta demonstração.</p>
+      </div>
+    </section>
+
+    <!-- RESERVAS E CONTATO -->
+    <section class="section" id="reservas">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Reservas</span>
+          <h2>Reserve a sua mesa</h2>
+          <p class="lead">Preencha os dados e confirme o seu pedido de reserva.</p>
+        </div>
+
+        <div class="booking-grid">
+          <!-- Formulário (validação em script.js; nada é enviado) -->
+          <div class="panel reveal">
+            <form id="reserva-form" novalidate>
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="nome">Nome</label>
+                  <input id="nome" name="nome" type="text" autocomplete="off" aria-describedby="erro-nome">
+                  <p class="error" id="erro-nome"></p>
+                </div>
+                <div class="field">
+                  <label for="data">Data</label>
+                  <input id="data" name="data" type="date" aria-describedby="erro-data">
+                  <p class="error" id="erro-data"></p>
+                </div>
+                <div class="field">
+                  <label for="horario">Horário</label>
+                  <select id="horario" name="horario" aria-describedby="erro-horario">
+                    <option value="">Escolha…</option>
+                    <option>12:00</option><option>13:00</option><option>14:00</option>
+                    <option>19:00</option><option>20:00</option><option>21:00</option>
+                  </select>
+                  <p class="error" id="erro-horario"></p>
+                </div>
+                <div class="field full">
+                  <label for="pessoas">Número de pessoas</label>
+                  <input id="pessoas" name="pessoas" type="number" min="1" max="12" value="2" aria-describedby="erro-pessoas">
+                  <p class="error" id="erro-pessoas"></p>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit" style="margin-top:1.2rem;">Confirmar reserva</button>
+              <p class="form-status" id="reserva-status" role="status" hidden></p>
+            </form>
+          </div>
+
+          <!-- Informações -->
+          <aside class="panel reveal">
+            <h3>Funcionamento</h3>
+            <ul class="info-list">
+              <li><span>Terça a quinta</span><span>11h30 às 23h</span></li>
+              <li><span>Sexta e sábado</span><span>11h30 às 23h</span></li>
+              <li><span>Domingo</span><span>11h30 às 23h</span></li>
+              <li><span>Segunda</span><span>Fechado</span></li>
+              <li><span>Endereço</span><span>Endereço fictício</span></li>
+            </ul>
+            <p class="fake-note">Este restaurante não existe. O site foi criado como demonstração do trabalho da HelpTech.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Sabor &amp; Brasa — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

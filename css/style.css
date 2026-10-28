@@ -680,3 +680,6 @@ main { flex: 1; }
 .features li { padding-left: 1.4rem; position: relative; }
 .features li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
 .project-card .tag-soft { margin-bottom: 0.7rem; }
+
+   /* Link "Ver demonstração" fica sempre no pé do cartão de projeto */
+   .project-card .card-link { margin-top: auto; padding-top: 1rem; }

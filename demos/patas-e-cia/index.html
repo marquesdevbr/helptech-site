@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patas &amp; Cia — Pet shop (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de um pet shop fictício com serviços, agendamento com estimativa de preço, produtos e dicas.">
+  <meta name="theme-color" content="#0f8b8d">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. O pet shop, os produtos e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="6" cy="10" rx="2.2" ry="3"/><ellipse cx="10.5" cy="5.5" rx="2.2" ry="3"/><ellipse cx="16" cy="6" rx="2.2" ry="3"/><ellipse cx="19.5" cy="11" rx="2.2" ry="3"/><path d="M12 11c-3 0-6 3.2-6 6 0 2 1.6 3 3.4 3 1 0 1.8-.5 2.6-.5s1.6.5 2.6.5c1.8 0 3.4-1 3.4-3 0-2.8-3-6-6-6z"/></svg>
+        Patas &amp; Cia
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#dicas">Dicas</a></li>
+        <li><a class="btn btn-primary" href="#agendar">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Cuidado de <em>verdade</em> para quem faz parte da família</h1>
+          <p class="lead">Banho, tosa, consulta e tudo o que o seu cachorro ou gato precisa. Agende em poucos cliques e veja a estimativa na hora.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#agendar">Agendar serviço</a>
+            <a class="btn btn-outline" href="#produtos">Ver produtos</a>
+          </div>
+        </div>
+
+        <!-- Ilustração: cachorro feito em SVG (sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="float">
+            <circle cx="160" cy="160" r="150" fill="#dff3f1"/>
+            <ellipse cx="160" cy="262" rx="90" ry="10" fill="#0f8b8d" opacity=".18"/>
+            <path d="M92 110c-30-8-46 20-40 54 4 22 20 30 34 22z" fill="#9a6a3c"/>
+            <path d="M228 110c30-8 46 20 40 54-4 22-20 30-34 22z" fill="#9a6a3c"/>
+            <ellipse cx="160" cy="150" rx="78" ry="82" fill="#d9a066"/>
+            <ellipse cx="160" cy="184" rx="44" ry="34" fill="#f6dcb8"/>
+            <circle cx="128" cy="138" r="11" fill="#24343a"/><circle cx="192" cy="138" r="11" fill="#24343a"/>
+            <circle cx="131" cy="134" r="3.6" fill="#fff"/><circle cx="195" cy="134" r="3.6" fill="#fff"/>
+            <ellipse cx="160" cy="170" rx="16" ry="11" fill="#24343a"/>
+            <path d="M160 180v12m0 0c-8 10-22 8-26-2m26 2c8 10 22 8 26-2" fill="none" stroke="#24343a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M160 196c-7 0-12 5-12 14 0 12 8 20 12 20s12-8 12-20c0-9-5-14-12-14z" fill="#ff6b57"/>
+            <rect x="110" y="224" width="100" height="16" rx="8" fill="#ff6b57"/>
+            <circle cx="160" cy="244" r="9" fill="#ffd166"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Serviços</span>
+          <h2>Tudo para o bem-estar do seu pet</h2>
+          <p class="lead">Quatro serviços principais, feitos com calma e atenção.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="service-card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg></div>
+            <h3>Banho</h3>
+            <p>Banho com produtos adequados à pele e à pelagem, secagem e perfume suave.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5l12 9M8 16.5l12-9"/></svg></div>
+            <h3>Tosa</h3>
+            <p>Tosa higiênica ou completa, no estilo que combina com o seu pet.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+            <h3>Consulta veterinária</h3>
+            <p>Check-up de rotina e orientação para a saúde e a alimentação do animal.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l8-4 8 4v10l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v10"/></svg></div>
+            <h3>Loja</h3>
+            <p>Rações, brinquedos, acessórios e itens de higiene para o dia a dia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO COM ESTIMATIVA (lógica em script.js) -->
+    <section class="section alt" id="agendar">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Agendamento</span>
+          <h2>Agende e veja a estimativa</h2>
+          <p class="lead">Escolha as opções e o valor aparece na hora. Esta é uma simulação.</p>
+        </div>
+
+        <div class="booking">
+          <div class="panel reveal">
+            <form id="pet-form" novalidate>
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="servico">Serviço</label>
+                  <select id="servico" name="servico" aria-describedby="erro-servico">
+                    <option value="">Escolha…</option>
+                    <option>Banho</option>
+                    <option>Tosa</option>
+                    <option>Banho e tosa</option>
+                    <option>Consulta veterinária</option>
+                  </select>
+                  <p class="error" id="erro-servico"></p>
+                </div>
+
+                <div class="field">
+                  <fieldset aria-describedby="erro-animal">
+                    <legend>Animal</legend>
+                    <div class="choices">
+                      <label class="choice"><input type="radio" name="animal" value="cao"><span>Cachorro</span></label>
+                      <label class="choice"><input type="radio" name="animal" value="gato"><span>Gato</span></label>
+                    </div>
+                  </fieldset>
+                  <p class="error" id="erro-animal"></p>
+                </div>
+
+                <div class="field">
+                  <fieldset aria-describedby="erro-porte">
+                    <legend>Porte</legend>
+                    <div class="choices">
+                      <label class="choice"><input type="radio" name="porte" value="pequeno"><span>Pequeno</span></label>
+                      <label class="choice"><input type="radio" name="porte" value="medio"><span>Médio</span></label>
+                      <label class="choice"><input type="radio" name="porte" value="grande"><span>Grande</span></label>
+                    </div>
+                  </fieldset>
+                  <p class="error" id="erro-porte"></p>
+                </div>
+
+                <div class="field">
+                  <label for="data">Data</label>
+                  <input id="data" name="data" type="date" aria-describedby="erro-data">
+                  <p class="error" id="erro-data"></p>
+                </div>
+                <div class="field">
+                  <label for="pet">Nome do pet</label>
+                  <input id="pet" name="pet" type="text" autocomplete="off" aria-describedby="erro-pet">
+                  <p class="error" id="erro-pet"></p>
+                </div>
+              </div>
+
+              <!-- estimativa que muda ao escolher as opções -->
+              <div class="estimate" aria-live="polite">
+                <div><span>Estimativa</span><small id="estimativa-obs">Escolha serviço, animal e porte para ver a estimativa.</small></div>
+                <strong id="estimativa-valor">—</strong>
+              </div>
+
+              <button class="btn btn-primary" type="submit" style="margin-top:1.2rem;">Confirmar agendamento</button>
+              <p class="form-status" id="pet-status" role="status" hidden></p>
+            </form>
+          </div>
+
+          <aside class="side-card reveal">
+            <h3>Como funciona</h3>
+            <ul>
+              <li><span>Funcionamento</span><span>Seg a sáb, 9h às 18h</span></li>
+              <li><span>Domingo</span><span>Fechado</span></li>
+              <li><span>Endereço</span><span>Fictício</span></li>
+            </ul>
+            <p>O valor muda conforme o serviço, o animal e o porte. Todos os preços desta página são inventados para a demonstração.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS (filtro em script.js) -->
+    <section class="section" id="produtos">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Loja</span>
+          <h2>Produtos para o dia a dia</h2>
+        </div>
+
+        <div class="filters" id="filtros" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-filter="racao" aria-pressed="false">Ração</button>
+          <button class="chip" type="button" data-filter="brinquedos" aria-pressed="false">Brinquedos</button>
+          <button class="chip" type="button" data-filter="acessorios" aria-pressed="false">Acessórios</button>
+          <button class="chip" type="button" data-filter="higiene" aria-pressed="false">Higiene</button>
+        </div>
+        <p class="count" id="produtos-contagem" aria-live="polite"></p>
+
+        <ul class="product-grid" id="produtos">
+          <li class="product" data-category="racao"><div class="pic" style="background:#0f8b8d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7zM9 8V5h6v3"/></svg></div><div class="body"><span class="tag">Ração</span><h3>Ração adulto cães</h3><p class="price">R$ 129,90</p></div></li>
+          <li class="product" data-category="racao"><div class="pic" style="background:#2b9a8f"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7zM9 8V5h6v3"/></svg></div><div class="body"><span class="tag">Ração</span><h3>Ração gatos castrados</h3><p class="price">R$ 99,90</p></div></li>
+          <li class="product" data-category="brinquedos"><div class="pic" style="background:#ff6b57"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M4 12c5 2 11 2 16 0"/></svg></div><div class="body"><span class="tag">Brinquedos</span><h3>Bolinha de borracha</h3><p class="price">R$ 14,90</p></div></li>
+          <li class="product" data-category="brinquedos"><div class="pic" style="background:#e8826a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l4 4M15 15l4 4M9 9l6 6M4 8a2 2 0 1 1 4-4M16 20a2 2 0 1 1 4-4"/></svg></div><div class="body"><span class="tag">Brinquedos</span><h3>Osso de corda</h3><p class="price">R$ 19,90</p></div></li>
+          <li class="product" data-category="acessorios"><div class="pic" style="background:#f2a33a"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 6V3M9 3h6"/></svg></div><div class="body"><span class="tag">Acessórios</span><h3>Coleira ajustável</h3><p class="price">R$ 39,90</p></div></li>
+          <li class="product" data-category="acessorios"><div class="pic" style="background:#d98a2a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14l9-9 9 9v6H3z"/><path d="M10 20v-5h4v5"/></svg></div><div class="body"><span class="tag">Acessórios</span><h3>Caminha macia</h3><p class="price">R$ 89,90</p></div></li>
+          <li class="product" data-category="higiene"><div class="pic" style="background:#4a7fc1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg></div><div class="body"><span class="tag">Higiene</span><h3>Shampoo neutro</h3><p class="price">R$ 29,90</p></div></li>
+          <li class="product" data-category="higiene"><div class="pic" style="background:#5b6fc9"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L20 4M7 17l-2 2M10 14l-2 2M13 11l-2 2M16 8l-2 2"/></svg></div><div class="body"><span class="tag">Higiene</span><h3>Escova de pelos</h3><p class="price">R$ 24,90</p></div></li>
+        </ul>
+        <p class="count" style="margin-top:1.6rem;">Produtos e valores fictícios, criados para esta demonstração.</p>
+      </div>
+    </section>
+
+    <!-- DICAS (acordeão nativo <details>) -->
+    <section class="section alt" id="dicas">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Dicas</span>
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Com que frequência devo dar banho no meu pet?</summary>
+            <p>Depende da pelagem, do estilo de vida e da orientação do veterinário. Em geral, banho em excesso pode ressecar a pele; na dúvida, pergunte ao profissional.</p>
+          </details>
+          <details>
+            <summary>Como escolher a ração ideal?</summary>
+            <p>Leve em conta a idade, o porte e a saúde do animal. Para dietas especiais ou castrados, vale conversar com o veterinário antes de trocar.</p>
+          </details>
+          <details>
+            <summary>Gatos também podem ir ao banho e à tosa?</summary>
+            <p>Sim, quando necessário e com calma. Gatos costumam precisar de menos banhos; a tosa higiênica ajuda em pelagens longas.</p>
+          </details>
+          <details>
+            <summary>Este site é de um pet shop de verdade?</summary>
+            <p>Não. Patas &amp; Cia é um negócio fictício, criado pela HelpTech para demonstrar como um site de pet shop pode funcionar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Patas &amp; Cia — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pão de Praça — Padaria e cafeteria (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de uma padaria e cafeteria fictícia, com vitrine do dia e encomenda de bolo.">
+  <meta name="theme-color" content="#fbf4e8">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,800;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. A padaria, os produtos e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">
+        <!-- ícone de espiga de trigo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V8M12 8c-2-1-3-3-3-5 2 0 3 2 3 5zM12 8c2-1 3-3 3-5-2 0-3 2-3 5zM12 14c-2-1-4-3-4-5 2 0 4 2 4 5zM12 14c2-1 4-3 4-5-2 0-4 2-4 5z"/></svg>
+        Pão de Praça
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">Nossa padaria</a></li>
+        <li><a href="#vitrine">Vitrine do dia</a></li>
+        <li><a href="#encomenda">Encomendas</a></li>
+        <li><a href="#horarios">Horários</a></li>
+        <li><a class="btn btn-primary" href="#encomenda">Encomendar bolo</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Pão quentinho, <em>todo dia</em> na praça.</h1>
+          <p class="lead">Fermentação natural, café coado na hora e bolos feitos sob encomenda. Uma padaria de bairro para começar bem o dia.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vitrine">Ver a vitrine do dia</a>
+            <a class="btn btn-ghost" href="#encomenda">Encomendar um bolo</a>
+          </div>
+        </div>
+
+        <!-- Ilustração: pães e trigo (SVG, sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <defs>
+              <linearGradient id="crust" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e3a557"/><stop offset="1" stop-color="#a8561f"/>
+              </linearGradient>
+              <linearGradient id="crust2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#efbf79"/><stop offset="1" stop-color="#b8672b"/>
+              </linearGradient>
+            </defs>
+            <!-- fundo suave -->
+            <circle cx="200" cy="205" r="175" fill="#f3e0bd"/>
+            <circle cx="200" cy="205" r="140" fill="#f8ebd0"/>
+            <!-- baguete -->
+            <g transform="rotate(-24 200 190)">
+              <rect x="50" y="168" width="300" height="46" rx="23" fill="url(#crust2)"/>
+              <g stroke="#f7dca8" stroke-width="5" stroke-linecap="round" fill="none">
+                <path d="M100 182l24 14M150 180l24 14M200 180l24 14M250 180l24 14M298 182l22 14"/>
+              </g>
+            </g>
+            <!-- pão redondo (boule) -->
+            <ellipse cx="205" cy="268" rx="112" ry="78" fill="url(#crust)"/>
+            <path d="M140 252c26-24 58-30 92-20M168 282c22-16 52-20 84-10M214 240c6 20 4 40-4 58" fill="none" stroke="#f7dca8" stroke-width="6" stroke-linecap="round"/>
+            <!-- trigo -->
+            <g stroke="#c98a2b" stroke-width="3" stroke-linecap="round" fill="#e0a73d">
+              <path d="M82 330c10-50 14-100 8-150" fill="none"/>
+              <ellipse cx="86" cy="186" rx="8" ry="14" transform="rotate(-10 86 186)"/>
+              <ellipse cx="74" cy="206" rx="8" ry="14" transform="rotate(-30 74 206)"/>
+              <ellipse cx="98" cy="208" rx="8" ry="14" transform="rotate(14 98 208)"/>
+              <ellipse cx="72" cy="232" rx="8" ry="14" transform="rotate(-30 72 232)"/>
+              <ellipse cx="96" cy="234" rx="8" ry="14" transform="rotate(14 96 234)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA PADARIA -->
+    <section class="section alt" id="sobre">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Nossa padaria</span>
+          <h2>Feito com calma, do jeito de antigamente</h2>
+          <p class="lead">Aqui o forno acende cedo e a massa descansa o tempo que precisa.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22V8M12 8c-2-1-3-3-3-5 2 0 3 2 3 5zM12 8c2-1 3-3 3-5-2 0-3 2-3 5zM12 14c-2-1-4-3-4-5 2 0 4 2 4 5zM12 14c2-1 4-3 4-5-2 0-4 2-4 5z"/></svg></div>
+            <h3>Fermentação natural</h3>
+            <p>Pães de massa longa, com mais sabor e casquinha crocante.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 5h-2M7 3v3M11 3v3"/></svg></div>
+            <h3>Café coado na hora</h3>
+            <p>Do cafezinho ao cappuccino, sempre fresco e na temperatura certa.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12h12l-1.5 8h-9zM6 12a6 4 0 0 1 12 0M12 5v3"/></svg></div>
+            <h3>Bolos sob encomenda</h3>
+            <p>Monte o seu bolo e veja o valor estimado na hora.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VITRINE DO DIA (os itens são criados pelo script.js) -->
+    <section class="section" id="vitrine">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Vitrine do dia</span>
+          <h2>O que saiu do forno hoje</h2>
+          <p class="lead">Filtre por categoria e veja o que combina com o seu café.</p>
+        </div>
+
+        <!-- Botões de filtro -->
+        <div class="filters" role="group" aria-label="Filtrar a vitrine por categoria" id="filtros">
+          <button type="button" class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-filter="paes" aria-pressed="false">Pães</button>
+          <button type="button" class="chip" data-filter="doces" aria-pressed="false">Doces</button>
+          <button type="button" class="chip" data-filter="salgados" aria-pressed="false">Salgados</button>
+          <button type="button" class="chip" data-filter="cafe" aria-pressed="false">Café</button>
+        </div>
+
+        <!-- Aviso lido por leitores de tela quando o filtro muda -->
+        <p class="status-line" id="vitrine-status" aria-live="polite"></p>
+
+        <div class="showcase" id="vitrine-lista"></div>
+        <noscript><p class="status-line">Ative o JavaScript para ver a vitrine do dia.</p></noscript>
+        <p class="fake-note">Produtos e valores fictícios, criados para esta demonstração.</p>
+      </div>
+    </section>
+
+    <!-- ENCOMENDA DE BOLO (calculadora + formulário; lógica em script.js) -->
+    <section class="section alt" id="encomenda">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Encomendas</span>
+          <h2>Monte o seu bolo</h2>
+          <p class="lead">Escolha tamanho, sabor, recheio e extras. O valor estimado aparece ao lado, na hora.</p>
+        </div>
+
+        <div class="order-grid">
+          <div class="panel reveal">
+            <form id="bolo-form" novalidate>
+
+              <!-- Tamanho (cada opção tem o preço em data-price) -->
+              <fieldset>
+                <legend>Tamanho</legend>
+                <div class="size-options">
+                  <div class="size-option">
+                    <input type="radio" id="tam-p" name="tamanho" value="Pequeno" data-price="80" checked>
+                    <label for="tam-p"><strong>Pequeno</strong><span>8 fatias · R$ 80</span></label>
+                  </div>
+                  <div class="size-option">
+                    <input type="radio" id="tam-m" name="tamanho" value="Médio" data-price="140">
+                    <label for="tam-m"><strong>Médio</strong><span>16 fatias · R$ 140</span></label>
+                  </div>
+                  <div class="size-option">
+                    <input type="radio" id="tam-g" name="tamanho" value="Grande" data-price="200">
+                    <label for="tam-g"><strong>Grande</strong><span>24 fatias · R$ 200</span></label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Sabor e recheio (acréscimo em data-add) -->
+              <div class="field">
+                <label for="sabor">Sabor da massa</label>
+                <select id="sabor" name="sabor">
+                  <option value="Chocolate" data-add="0">Chocolate</option>
+                  <option value="Baunilha" data-add="0">Baunilha</option>
+                  <option value="Cenoura" data-add="10">Cenoura (+ R$ 10)</option>
+                  <option value="Limão" data-add="10">Limão (+ R$ 10)</option>
+                  <option value="Red velvet" data-add="25">Red velvet (+ R$ 25)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="recheio">Recheio</label>
+                <select id="recheio" name="recheio">
+                  <option value="Brigadeiro" data-add="0">Brigadeiro</option>
+                  <option value="Doce de leite" data-add="8">Doce de leite (+ R$ 8)</option>
+                  <option value="Creme de leite ninho" data-add="12">Creme de leite ninho (+ R$ 12)</option>
+                  <option value="Frutas vermelhas" data-add="20">Frutas vermelhas (+ R$ 20)</option>
+                </select>
+              </div>
+
+              <!-- Extras -->
+              <fieldset>
+                <legend>Extras</legend>
+                <div class="checks">
+                  <label class="check"><input type="checkbox" name="extra" value="Cobertura de ganache" data-add="25"> Cobertura de ganache <small>+ R$ 25</small></label>
+                  <label class="check"><input type="checkbox" name="extra" value="Topo personalizado" data-add="15"> Topo personalizado <small>+ R$ 15</small></label>
+                  <label class="check"><input type="checkbox" name="extra" value="Velas" data-add="5"> Velas <small>+ R$ 5</small></label>
+                  <label class="check"><input type="checkbox" name="extra" value="Embalagem para presente" data-add="10"> Embalagem para presente <small>+ R$ 10</small></label>
+                </div>
+              </fieldset>
+
+              <!-- Dados do pedido (validados pelo script.js) -->
+              <div class="field">
+                <label for="nome">Seu nome</label>
+                <input id="nome" name="nome" type="text" autocomplete="off" aria-describedby="erro-nome">
+                <p class="error" id="erro-nome"></p>
+              </div>
+
+              <div class="field">
+                <label for="data">Data de retirada</label>
+                <input id="data" name="data" type="date" aria-describedby="dica-data erro-data">
+                <p class="hint" id="dica-data">Pedimos 2 dias de antecedência.</p>
+                <p class="error" id="erro-data"></p>
+              </div>
+
+              <div class="field">
+                <label for="mensagem">Mensagem no bolo (opcional)</label>
+                <input id="mensagem" name="mensagem" type="text" maxlength="40" autocomplete="off" aria-describedby="dica-msg">
+                <p class="hint" id="dica-msg"><span id="contador">0</span>/40 caracteres</p>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Fazer pedido de demonstração</button>
+              <p class="form-status" id="bolo-status" role="status" hidden></p>
+            </form>
+          </div>
+
+          <!-- Resumo com valor estimado (atualizado ao vivo) -->
+          <aside class="panel summary reveal">
+            <h3>Resumo do pedido</h3>
+            <ul class="summary-list" id="resumo-lista" aria-live="polite"></ul>
+            <p class="total"><span>Total estimado</span> <span id="resumo-total">R$ 0</span></p>
+            <p class="fake-note">Valores fictícios. Nada é enviado nem guardado: a Pão de Praça não existe e este formulário é só uma demonstração.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORÁRIOS -->
+    <section class="section" id="horarios">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Horários</span>
+          <h2>Venha tomar um café</h2>
+        </div>
+
+        <div class="hours-grid">
+          <ul class="info-list reveal">
+            <li><span>Segunda a sábado</span><span>6h às 19h</span></li>
+            <li><span>Domingo</span><span>6h às 12h</span></li>
+            <li><span>Endereço</span><span>Endereço fictício</span></li>
+            <li><span>Telefone</span><span>Telefone fictício</span></li>
+          </ul>
+          <p class="lead reveal">Esta padaria não existe. O site foi criado como demonstração do trabalho da HelpTech para um comércio de bairro.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Pão de Praça — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

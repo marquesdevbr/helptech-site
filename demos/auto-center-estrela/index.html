@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Center Estrela — Oficina mecânica (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de uma oficina mecânica fictícia com serviços, orçamento com estimativa ao vivo e acompanhamento do carro.">
+  <meta name="theme-color" content="#11151b">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. A oficina, os serviços e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.1 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+        Auto Center Estrela
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+        <li><a href="#acompanhe">Acompanhe</a></li>
+        <li><a class="btn btn-primary" href="#orcamento">Orçar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Seu carro em <em>boas mãos</em></h1>
+          <p class="lead">Revisão, freios, suspensão, elétrica e mais. Monte o seu orçamento na hora e acompanhe o andamento do serviço pelo site.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#orcamento">Montar orçamento</a>
+            <a class="btn btn-ghost" href="#acompanhe">Acompanhar carro</a>
+          </div>
+        </div>
+
+        <!-- Ilustração: engrenagem em SVG (sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 320 320">
+            <circle cx="160" cy="160" r="150" fill="#1f2631"/>
+            <g class="spin">
+              <path fill="#2f81f7" d="M139 40h42l6 28a96 96 0 0 1 23 13l27-10 21 36-21 19a96 96 0 0 1 0 26l21 19-21 36-27-10a96 96 0 0 1-23 13l-6 28h-42l-6-28a96 96 0 0 1-23-13l-27 10-21-36 21-19a96 96 0 0 1 0-26l-21-19 21-36 27 10a96 96 0 0 1 23-13z"/>
+              <circle cx="160" cy="160" r="44" fill="#1f2631"/>
+            </g>
+            <path fill="#ffc61a" d="M160 128l9.4 20.6 22.6 2.6-16.7 15.4 4.5 22.3L160 177l-19.8 11.9 4.5-22.3-16.7-15.4 22.6-2.6z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Serviços</span>
+          <h2>O que a gente faz</h2>
+        </div>
+        <div class="grid-3">
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+            <h3>Revisão e óleo</h3>
+            <p>Troca de óleo e filtros e conferência dos itens de manutenção preventiva.</p>
+          </article>
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6"/></svg>
+            <h3>Freios</h3>
+            <p>Pastilhas, discos e fluido de freio, com teste ao final.</p>
+          </article>
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h16M6 17V9l3-4h6l3 4v8M9 17v3M15 17v3"/></svg>
+            <h3>Suspensão e direção</h3>
+            <p>Amortecedores, buchas e alinhamento para rodar com segurança.</p>
+          </article>
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+            <h3>Elétrica e bateria</h3>
+            <p>Diagnóstico de bateria, alternador e partida.</p>
+          </article>
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg>
+            <h3>Ar-condicionado</h3>
+            <p>Higienização e conferência do sistema de ar.</p>
+          </article>
+          <article class="service reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3>Pneus e alinhamento</h3>
+            <p>Calibragem, balanceamento e alinhamento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORÇAMENTO COM ESTIMATIVA AO VIVO (lógica em script.js) -->
+    <section class="section alt" id="orcamento">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Orçamento</span>
+          <h2>Monte a sua estimativa</h2>
+          <p class="lead">Marque os serviços e escolha o tipo do veículo. O valor muda na hora. É uma simulação.</p>
+        </div>
+
+        <form id="orc-form" novalidate>
+          <div class="quote-grid">
+            <div class="panel reveal">
+              <div class="form-grid">
+                <div class="field full">
+                  <fieldset aria-describedby="erro-servico">
+                    <legend>Serviços</legend>
+                    <div class="checks" style="margin-top:.5rem;">
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Revisão e troca de óleo" data-valor="220"><span>Revisão e troca de óleo <b>a partir de R$ 220</b></span></label>
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Freios (pastilhas)" data-valor="260"><span>Freios (pastilhas) <b>a partir de R$ 260</b></span></label>
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Suspensão e direção" data-valor="380"><span>Suspensão e direção <b>a partir de R$ 380</b></span></label>
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Elétrica e bateria" data-valor="190"><span>Elétrica e bateria <b>a partir de R$ 190</b></span></label>
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Ar-condicionado" data-valor="170"><span>Ar-condicionado <b>a partir de R$ 170</b></span></label>
+                      <label class="check"><input type="checkbox" name="servico" data-nome="Alinhamento e balanceamento" data-valor="140"><span>Alinhamento e balanceamento <b>a partir de R$ 140</b></span></label>
+                    </div>
+                  </fieldset>
+                  <p class="error" id="erro-servico"></p>
+                </div>
+
+                <div class="field">
+                  <label for="tipo">Tipo do veículo</label>
+                  <select id="tipo" name="tipo" aria-describedby="erro-tipo">
+                    <option value="">Escolha…</option>
+                    <option value="hatch">Hatch / compacto</option>
+                    <option value="sedan">Sedã</option>
+                    <option value="suv">SUV / picape</option>
+                  </select>
+                  <p class="error" id="erro-tipo"></p>
+                </div>
+                <div class="field">
+                  <label for="nome">Seu nome</label>
+                  <input id="nome" name="nome" type="text" autocomplete="off" aria-describedby="erro-nome">
+                  <p class="error" id="erro-nome"></p>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" type="submit" style="margin-top:1rem;">Pedir orçamento</button>
+              <p class="form-status" id="orc-status" role="status" hidden></p>
+            </div>
+
+            <aside class="estimate reveal" aria-live="polite">
+              <h3>Sua estimativa</h3>
+              <ul id="orc-lista"></ul>
+              <div class="total"><span>Total</span><strong id="orc-total">R$ 0,00</strong></div>
+              <small>Valores fictícios. Numa oficina real, o preço final depende da avaliação do veículo e das peças.</small>
+            </aside>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ACOMPANHE SEU CARRO -->
+    <section class="section" id="acompanhe">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Acompanhe</span>
+          <h2>Como está o meu carro?</h2>
+          <p class="lead">Digite o código do serviço e veja em qual etapa o carro está.</p>
+        </div>
+
+        <form class="track-form reveal" id="track-form" novalidate>
+          <div class="field">
+            <label for="codigo">Código do serviço</label>
+            <input id="codigo" type="text" autocomplete="off" aria-describedby="erro-codigo">
+          </div>
+          <button class="btn btn-primary" type="submit">Consultar</button>
+        </form>
+        <p class="error" id="erro-codigo" role="alert" style="max-width:640px;"></p>
+        <p class="hint">Para testar, use o código <code>DEMO-123</code>. Ele é fictício.</p>
+
+        <div class="track-result" id="track-result" hidden>
+          <div class="track-car" id="track-car"></div>
+          <ol class="timeline" id="timeline"></ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Auto Center Estrela — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

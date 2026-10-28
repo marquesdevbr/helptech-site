@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Aurora — Salão de beleza (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de um salão de beleza fictício com serviços, galeria e agendamento passo a passo.">
+  <meta name="theme-color" content="#fbf6f2">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. O salão, os serviços e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">Studio <span>Aurora</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#diferenciais">O salão</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#agendar">Contato</a></li>
+        <li><a class="btn btn-primary" href="#agendar">Agendar horário</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Salão de beleza</span>
+          <h1>Realce a sua <em>beleza</em>, no seu tempo.</h1>
+          <p class="lead">Cabelo, unhas, maquiagem e cuidados com a pele em um espaço pensado para você relaxar e sair se sentindo incrível.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#agendar">Agendar horário</a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
+          <ul class="hero-facts">
+            <li>Atendimento com hora marcada</li>
+            <li>Produtos selecionados</li>
+            <li>Ambiente acolhedor</li>
+          </ul>
+        </div>
+
+        <!-- Ilustração: arcos e flor, desenhados em SVG (sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 460">
+            <defs>
+              <linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8d3c0"/><stop offset="1" stop-color="#f4e9e1"/></linearGradient>
+              <linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d98aa0"/><stop offset="1" stop-color="#b9627a"/></linearGradient>
+              <linearGradient id="a3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9d4"/><stop offset="1" stop-color="#e8b9bf"/></linearGradient>
+            </defs>
+            <!-- arcos -->
+            <path d="M30 440V190a170 170 0 0 1 340 0v250z" fill="url(#a1)"/>
+            <path d="M80 440V200a120 120 0 0 1 240 0v240z" fill="url(#a3)"/>
+            <path d="M130 440V210a70 70 0 0 1 140 0v230z" fill="url(#a2)"/>
+            <!-- sol -->
+            <circle cx="200" cy="120" r="26" fill="#fff" fill-opacity=".85"/>
+            <!-- flor -->
+            <g transform="translate(200 300)" fill="#fff" fill-opacity=".92">
+              <ellipse rx="14" ry="30" cy="-30"/><ellipse rx="14" ry="30" cy="-30" transform="rotate(60)"/><ellipse rx="14" ry="30" cy="-30" transform="rotate(120)"/>
+              <ellipse rx="14" ry="30" cy="-30" transform="rotate(180)"/><ellipse rx="14" ry="30" cy="-30" transform="rotate(240)"/><ellipse rx="14" ry="30" cy="-30" transform="rotate(300)"/>
+              <circle r="13" fill="#e8d3c0"/>
+            </g>
+            <path d="M200 340c0 40-6 70-6 100" stroke="#fff" stroke-opacity=".7" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section alt" id="diferenciais">
+      <div class="container">
+        <div class="head-center reveal">
+          <span class="eyebrow">O salão</span>
+          <h2>Cuidado em cada detalhe</h2>
+          <p class="lead">Um atendimento calmo, sem pressa e com a atenção que você merece.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>Hora marcada</h3>
+            <p>Você escolhe o dia e o horário, e o seu tempo é respeitado.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 5.3L20 9l-4.3 3.8L17 19l-5-3-5 3 1.3-6.2L4 9l5.8-.7z"/></svg></div>
+            <h3>Produtos selecionados</h3>
+            <p>Linhas escolhidas por qualidade, para cuidar sem agredir.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></div>
+            <h3>Atendimento personalizado</h3>
+            <p>Cada serviço começa com uma conversa sobre o que você deseja.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS (valores fictícios) -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="head-center reveal">
+          <span class="eyebrow">Serviços</span>
+          <h2>O que fazemos por você</h2>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <h3>Corte e escova</h3>
+            <p>Corte sob medida para o seu rosto e o seu estilo, finalizado com escova modeladora.</p>
+            <div class="service-foot"><span class="price">R$ 120</span><span class="duration">cerca de 1h30</span></div>
+          </article>
+          <article class="service reveal">
+            <h3>Coloração</h3>
+            <p>Cor uniforme e brilhante, com produtos que respeitam a saúde dos fios.</p>
+            <div class="service-foot"><span class="price">R$ 220</span><span class="duration">cerca de 2h30</span></div>
+          </article>
+          <article class="service reveal">
+            <h3>Manicure e pedicure</h3>
+            <p>Cuidado completo das mãos e dos pés, com esmaltação à sua escolha.</p>
+            <div class="service-foot"><span class="price">R$ 90</span><span class="duration">cerca de 1h30</span></div>
+          </article>
+          <article class="service reveal">
+            <h3>Design de sobrancelha</h3>
+            <p>Desenho que valoriza o seu olhar, respeitando o formato natural.</p>
+            <div class="service-foot"><span class="price">R$ 50</span><span class="duration">cerca de 40 min</span></div>
+          </article>
+          <article class="service reveal">
+            <h3>Maquiagem social</h3>
+            <p>Make para festas, formaturas e eventos, com pele e olhar de destaque.</p>
+            <div class="service-foot"><span class="price">R$ 140</span><span class="duration">cerca de 1h15</span></div>
+          </article>
+          <article class="service reveal">
+            <h3>Limpeza de pele</h3>
+            <p>Higienização profunda e hidratação para uma pele mais uniforme e luminosa.</p>
+            <div class="service-foot"><span class="price">R$ 130</span><span class="duration">cerca de 1h</span></div>
+          </article>
+        </div>
+        <p class="price-note">Valores fictícios, criados para esta demonstração.</p>
+      </div>
+    </section>
+
+    <!-- GALERIA COM FILTRO (lógica em script.js) -->
+    <section class="section alt" id="galeria">
+      <div class="container">
+        <div class="head-center reveal">
+          <span class="eyebrow">Galeria</span>
+          <h2>Inspirações do estúdio</h2>
+          <p class="lead">Filtre por tipo de serviço e descubra ideias para o seu próximo visual.</p>
+        </div>
+
+        <!-- botões de filtro -->
+        <div class="filters" role="group" aria-label="Filtrar galeria por serviço">
+          <button type="button" class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-filter="cabelo" aria-pressed="false">Cabelo</button>
+          <button type="button" class="chip" data-filter="unhas" aria-pressed="false">Unhas</button>
+          <button type="button" class="chip" data-filter="make" aria-pressed="false">Maquiagem</button>
+          <button type="button" class="chip" data-filter="pele" aria-pressed="false">Pele</button>
+        </div>
+        <p class="filter-status" id="galeria-status" aria-live="polite"></p>
+
+        <!-- Cada peça define suas cores em --g1 e --g2. Ilustrações em SVG, não são fotos. -->
+        <div class="gallery" id="galeria-lista">
+          <figure class="tile" data-category="cabelo" style="--g1:#d98aa0; --g2:#b9627a;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c0-8 2-14 6-16 4 2 6 8 6 16M9 20c0-5 1-9 3-11 2 2 3 6 3 11"/></svg>
+            <figcaption>Ondas suaves</figcaption>
+          </figure>
+          <figure class="tile" data-category="unhas" style="--g1:#e8b9bf; --g2:#d98aa0;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V10a4 4 0 0 1 8 0v11zM8 14h8"/></svg>
+            <figcaption>Esmalte rosé</figcaption>
+          </figure>
+          <figure class="tile" data-category="make" style="--g1:#c9a38a; --g2:#9a6a52;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21v-8h6v8zM10 13V6l2-3 2 3v7"/></svg>
+            <figcaption>Batom nude</figcaption>
+          </figure>
+          <figure class="tile" data-category="pele" style="--g1:#f0cfc4; --g2:#d9a99c;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>
+            <figcaption>Hidratação profunda</figcaption>
+          </figure>
+          <figure class="tile" data-category="cabelo" style="--g1:#b9627a; --g2:#7e3b52;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8 16L19 4M16 16L5 4"/></svg>
+            <figcaption>Corte moderno</figcaption>
+          </figure>
+          <figure class="tile" data-category="unhas" style="--g1:#cfa6c0; --g2:#a06f93;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2 6 6 .5-4.6 4 1.600 6L12 16l-5 3.500 1.600-6L4 9.500 10 9z"/></svg>
+            <figcaption>Nail art delicada</figcaption>
+          </figure>
+          <figure class="tile" data-category="make" style="--g1:#e6c7b0; --g2:#c79678;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-5 15-5 18 0-3 5-15 5-18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+            <figcaption>Olhar marcante</figcaption>
+          </figure>
+          <figure class="tile" data-category="pele" style="--g1:#e9d5c3; --g2:#c9a98f;">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+            <figcaption>Pele luminosa</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Ilustrações criadas para esta demonstração, não são fotos de trabalhos reais.</p>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO PASSO A PASSO (lógica em script.js; nada é enviado) -->
+    <section class="section" id="agendar">
+      <div class="container">
+        <div class="reveal">
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <span class="eyebrow" style="display:block;">Agendamento</span>
+          <h2>Agende o seu horário</h2>
+          <p class="lead">Em quatro passos rápidos: serviço, profissional, data e confirmação.</p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="panel reveal">
+            <form id="agenda-form" novalidate>
+
+              <!-- indicador de etapas -->
+              <ol class="stepper" id="stepper" aria-label="Etapas do agendamento">
+                <li>Serviço</li><li>Profissional</li><li>Data e hora</li><li>Confirmar</li>
+              </ol>
+
+              <!-- ETAPA 1: SERVIÇO -->
+              <fieldset class="step" data-step="1">
+                <legend>Escolha o serviço</legend>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="servico" value="Corte e escova" data-price="120" data-min="90"><span>Corte e escova<small>cerca de 1h30</small></span><span class="opt-price">R$ 120</span></label>
+                  <label class="opt"><input type="radio" name="servico" value="Coloração" data-price="220" data-min="150"><span>Coloração<small>cerca de 2h30</small></span><span class="opt-price">R$ 220</span></label>
+                  <label class="opt"><input type="radio" name="servico" value="Manicure e pedicure" data-price="90" data-min="90"><span>Manicure e pedicure<small>cerca de 1h30</small></span><span class="opt-price">R$ 90</span></label>
+                  <label class="opt"><input type="radio" name="servico" value="Design de sobrancelha" data-price="50" data-min="40"><span>Design de sobrancelha<small>cerca de 40 min</small></span><span class="opt-price">R$ 50</span></label>
+                  <label class="opt"><input type="radio" name="servico" value="Maquiagem social" data-price="140" data-min="75"><span>Maquiagem social<small>cerca de 1h15</small></span><span class="opt-price">R$ 140</span></label>
+                  <label class="opt"><input type="radio" name="servico" value="Limpeza de pele" data-price="130" data-min="60"><span>Limpeza de pele<small>cerca de 1h</small></span><span class="opt-price">R$ 130</span></label>
+                </div>
+              </fieldset>
+
+              <!-- ETAPA 2: PROFISSIONAL -->
+              <fieldset class="step" data-step="2" hidden>
+                <legend>Escolha a profissional</legend>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="profissional" value="Qualquer profissional"><span>Qualquer profissional<small>o primeiro horário disponível</small></span></label>
+                  <label class="opt"><input type="radio" name="profissional" value="Helena"><span>Helena<small>cabelo e coloração</small></span></label>
+                  <label class="opt"><input type="radio" name="profissional" value="Marina"><span>Marina<small>unhas e sobrancelhas</small></span></label>
+                  <label class="opt"><input type="radio" name="profissional" value="Cecília"><span>Cecília<small>maquiagem e cuidados com a pele</small></span></label>
+                </div>
+              </fieldset>
+
+              <!-- ETAPA 3: DATA E HORÁRIO -->
+              <fieldset class="step" data-step="3" hidden>
+                <legend>Escolha data e horário</legend>
+                <div class="field">
+                  <label for="data">Data</label>
+                  <input id="data" name="data" type="date">
+                </div>
+                <p class="slots-hint" id="slots-hint">Escolha uma data para ver os horários.</p>
+                <div class="slots" id="slots" role="radiogroup" aria-label="Horários disponíveis"></div>
+              </fieldset>
+
+              <!-- ETAPA 4: RESUMO E CONFIRMAÇÃO -->
+              <fieldset class="step" data-step="4" hidden>
+                <legend>Confirme o seu pedido</legend>
+                <dl class="summary" id="resumo"></dl>
+                <div class="field">
+                  <label for="nome">Seu nome</label>
+                  <input id="nome" name="nome" type="text" autocomplete="off">
+                </div>
+              </fieldset>
+
+              <!-- mensagem de erro da etapa atual (lida por leitores de tela) -->
+              <p class="error" id="erro" role="alert"></p>
+
+              <div class="nav-steps">
+                <button class="btn btn-ghost" type="button" id="btn-voltar" disabled>Voltar</button>
+                <button class="btn btn-primary" type="button" id="btn-avancar">Continuar</button>
+              </div>
+
+              <p class="form-status" id="status" role="status" hidden></p>
+            </form>
+          </div>
+
+          <aside class="panel reveal">
+            <h3>Funcionamento</h3>
+            <ul class="info-list">
+              <li><span>Terça a sexta</span><span>9h às 19h</span></li>
+              <li><span>Sábado</span><span>9h às 17h</span></li>
+              <li><span>Domingo e segunda</span><span>Fechado</span></li>
+              <li><span>Endereço</span><span>Endereço fictício</span></li>
+            </ul>
+            <p class="fake-note">Este salão não existe. O site foi criado como demonstração do trabalho da HelpTech. Nenhum dado é enviado ou guardado.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Studio Aurora — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

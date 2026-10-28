@@ -1,0 +1,345 @@
+/* ==========================================================
+   Ritmo Fit — style.css  (PROJETO DEMONSTRATIVO / FICTÍCIO)
+   Identidade própria: preto + vermelho neon, tipografia forte
+   e formas diagonais. Não usa nenhum arquivo da HelpTech.
+   1. Variáveis    2. Base      3. Faixa demo   4. Navegação
+   5. Hero         6. Diferenciais  7. Modalidades
+   8. Grade de aulas  9. Planos  10. Aula experimental
+   11. Rodapé     12. Animações  13. Responsivo
+   ========================================================== */
+
+/* 1. VARIÁVEIS ------------------------------------------- */
+:root {
+  --bg: #0a0a0b;
+  --bg-2: #111114;
+  --card: #17171c;
+  --line: rgba(255, 255, 255, 0.1);
+
+  --white: #ffffff;
+  --muted: #a8a8b3;
+  --red: #ff2d55;        /* cor principal (vermelho neon) */
+  --red-2: #ff6a3d;      /* degradê do botão */
+  --glow: 0 0 28px rgba(255, 45, 85, 0.45);
+
+  --font-title: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --nav-h: 72px;
+  --radius: 14px;
+}
+
+/* 2. BASE ------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 10px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  overflow-x: hidden; /* as formas diagonais não podem gerar rolagem lateral */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin: 0 0 0.4em;
+}
+h1 { font-size: clamp(3.6rem, 11vw, 8rem); }
+h2 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+h3 { font-size: 1.8rem; }
+p { margin: 0 0 1em; }
+a { color: var(--red); }
+svg { display: block; max-width: 100%; }
+
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+.container { width: min(100% - 2.5rem, 1120px); margin-inline: auto; }
+/* texto só para leitores de tela */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.section { padding: clamp(4rem, 9vw, 7rem) 0; }
+.eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.6rem;
+}
+.lead { color: var(--muted); font-size: 1.25rem; max-width: 34rem; }
+.accent { color: var(--red); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2rem;
+  border: 2px solid transparent;
+  font: 800 1rem var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transform: skew(-8deg); /* botão inclinado: reforça a ideia de velocidade */
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.btn > * { transform: skew(8deg); }
+.btn-primary { background: linear-gradient(135deg, var(--red), var(--red-2)); color: #fff; box-shadow: var(--glow); }
+.btn-primary:hover { box-shadow: 0 0 40px rgba(255, 45, 85, 0.75); }
+.btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.4); background: transparent; }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* 3. FAIXA "PROJETO DEMONSTRATIVO" ------------------------- */
+.demo-bar {
+  background: #0b1630;
+  color: #cfe3ff;
+  font: 500 0.85rem var(--font-body);
+  padding: 0.55rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  justify-content: center;
+  text-align: center;
+}
+.demo-bar a { color: #6fd0ff; font-weight: 700; }
+
+/* 4. NAVEGAÇÃO ---------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-h);
+  background: rgba(10, 10, 11, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.logo { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.06em; color: #fff; text-decoration: none; line-height: 1; }
+.logo span { color: var(--red); }
+
+.nav-links { display: flex; align-items: center; gap: 1.7rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-links .btn { color: #fff; padding: 0.6rem 1.4rem; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid var(--line);
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* 5. HERO ---------------------------------------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 8vw, 6rem) 0 clamp(7rem, 12vw, 10rem);
+  background:
+    radial-gradient(40rem 26rem at 80% 30%, rgba(255, 45, 85, 0.3), transparent 62%),
+    var(--bg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* base diagonal */
+}
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem; align-items: center; }
+.hero h1 { margin-bottom: 0.15em; }
+.hero h1 .accent { text-shadow: var(--glow); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+.open-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.3rem;
+}
+.open-badge::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #868e96; }
+.open-badge.is-open::before { background: #3ddc84; box-shadow: 0 0 10px #3ddc84; }
+.open-badge.is-closed::before { background: var(--red); }
+
+.hero-art svg { width: 100%; filter: drop-shadow(0 0 30px rgba(255, 45, 85, 0.45)); }
+
+/* 6. DIFERENCIAIS -------------------------------------------- */
+.perks { background: var(--red); color: #fff; margin-top: -3.2rem; position: relative; z-index: 2; transform: skewY(-1.2deg); }
+.perks-inner { transform: skewY(1.2deg); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1.6rem 0; }
+.perk { display: flex; align-items: center; gap: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; font-size: 0.98rem; }
+.perk svg { width: 34px; height: 34px; flex: none; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 7. MODALIDADES --------------------------------------------- */
+.mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+.mod-card {
+  position: relative;
+  padding: 1.8rem 1.6rem 2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.mod-card::after { /* faixa diagonal decorativa no canto */
+  content: "";
+  position: absolute;
+  right: -30px; top: -30px;
+  width: 90px; height: 90px;
+  background: var(--red);
+  opacity: 0.18;
+  transform: rotate(45deg);
+}
+.mod-card:hover { transform: translateY(-5px); border-color: var(--red); }
+.mod-card svg { width: 46px; height: 46px; margin-bottom: 1rem; fill: none; stroke: var(--red); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.mod-card p { color: var(--muted); font-size: 1rem; margin: 0; }
+
+/* 8. GRADE DE AULAS ------------------------------------------ */
+.alt { background: var(--bg-2); clip-path: polygon(0 3vw, 100% 0, 100% calc(100% - 3vw), 0 100%); padding-block: clamp(6rem, 11vw, 9rem); }
+
+.filter-block { margin: 2rem 0 0.6rem; }
+.filter-label { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.5rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.1rem; }
+.chip {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font: 700 0.92rem var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chip:hover { color: #fff; border-color: var(--red); }
+.chip[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; box-shadow: var(--glow); }
+
+.grade-status { color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0 1rem; }
+.grade-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.class-row {
+  display: grid;
+  grid-template-columns: 70px 90px 1.2fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  background: var(--card);
+  border-left: 4px solid var(--red);
+}
+.c-day { font-family: var(--font-title); font-size: 1.6rem; letter-spacing: 0.04em; }
+.c-time { font-weight: 800; color: var(--red); font-size: 1.15rem; }
+.c-mod { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.c-info { color: var(--muted); font-size: 0.98rem; }
+.grade-empty { padding: 1.2rem; color: var(--muted); border: 1px dashed var(--line); }
+
+/* 9. PLANOS --------------------------------------------------- */
+.billing { display: inline-flex; border: 2px solid var(--line); margin: 1.6rem 0 2.2rem; }
+.billing button {
+  padding: 0.7rem 1.6rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 800 0.95rem var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.billing button[aria-pressed="true"] { background: var(--red); color: #fff; }
+.billing small { font-weight: 600; opacity: 0.9; margin-left: 0.4rem; }
+
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
+.plan { position: relative; padding: 2rem 1.7rem; background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; }
+.plan.featured { border-color: var(--red); box-shadow: var(--glow); }
+.plan .tag { position: absolute; top: -13px; left: 1.4rem; background: var(--red); color: #fff; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.8rem; }
+.price { font-family: var(--font-title); font-size: 4rem; line-height: 1; margin: 0.4rem 0 0; }
+.price small { font-family: var(--font-body); font-size: 1rem; color: var(--muted); font-weight: 600; }
+.price-note { color: var(--muted); font-size: 0.9rem; min-height: 1.4em; margin: 0.2rem 0 1.2rem; }
+.plan ul { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 0.5rem; flex: 1; }
+.plan li { padding-left: 1.6rem; position: relative; color: #ddd; }
+.plan li::before { content: "✓"; position: absolute; left: 0; color: var(--red); font-weight: 800; }
+.fake-note { color: var(--muted); font-size: 0.9rem; margin-top: 1.6rem; }
+
+/* 10. AULA EXPERIMENTAL --------------------------------------- */
+.trial { background: linear-gradient(135deg, #16060b, var(--bg) 60%); }
+.trial-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.panel { background: var(--card); border: 1px solid var(--line); padding: clamp(1.4rem, 3vw, 2.2rem); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: grid; gap: 0.35rem; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.field input, .field select {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: #fff;
+  font: inherit;
+}
+.field input:focus, .field select:focus { border-color: var(--red); outline: none; box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.3); }
+.field [aria-invalid="true"] { border-color: #ff6b81; }
+.error { color: #ff8da1; font-size: 0.85rem; margin: 0; min-height: 1.2em; }
+.form-status { margin-top: 1.1rem; padding: 1rem 1.1rem; background: rgba(61, 220, 132, 0.12); border: 1px solid rgba(61, 220, 132, 0.5); color: #d7f7e4; }
+.form-status[hidden] { display: none; }
+
+.hours { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.6rem; }
+.hours li { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }
+.hours li span:first-child { color: var(--muted); }
+
+/* 11. RODAPÉ --------------------------------------------------- */
+.footer { border-top: 1px solid var(--line); padding: 2.2rem 0; color: var(--muted); font-size: 0.95rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* 12. ANIMAÇÕES ------------------------------------------------- */
+.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* 13. RESPONSIVO ------------------------------------------------- */
+@media (max-width: 960px) {
+  .hero-grid, .trial-grid { grid-template-columns: 1fr; }
+  .hero-art { max-width: 340px; margin-inline: auto; order: -1; }
+  .perks-inner { grid-template-columns: 1fr 1fr; }
+  .mod-grid, .plans { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .nav-toggle { display: inline-block; }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.4rem 1.25rem 1.2rem;
+    background: rgba(10, 10, 11, 0.98);
+    border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { display: block; padding: 0.9rem 0; }
+  .nav-links .btn { margin-top: 0.6rem; text-align: center; }
+  .class-row { grid-template-columns: 60px 1fr; row-gap: 0.1rem; }
+  .c-mod { grid-column: 2; }
+  .c-info { grid-column: 1 / -1; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .mod-grid, .plans { grid-template-columns: 1fr; }
+  .perks-inner { grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; }
+}

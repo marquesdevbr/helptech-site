@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corte Nobre — Barbearia (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de uma barbearia fictícia com serviços, agenda de horários e informações de funcionamento.">
+  <meta name="theme-color" content="#0c0b0a">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. A barbearia, os serviços e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">Corte <span>Nobre</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">A casa</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#agenda">Contato</a></li>
+        <li><a class="btn btn-primary" href="#agenda">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Barba e corte <em>de respeito</em></h1>
+          <p class="lead">Atendimento no horário marcado, navalha afiada e acabamento caprichado. Escolha o dia, escolha a hora e venha.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#agenda">Agendar horário</a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+
+        <!-- Poste de barbeiro (SVG, sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 160 360">
+            <defs>
+              <clipPath id="glass"><rect x="46" y="58" width="68" height="244" rx="34"/></clipPath>
+              <linearGradient id="shine" x1="0" x2="1">
+                <stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/>
+              </linearGradient>
+            </defs>
+            <rect x="52" y="14" width="56" height="44" rx="10" fill="#c9a227"/>
+            <rect x="58" y="6" width="44" height="14" rx="7" fill="#e6c35c"/>
+            <rect x="52" y="302" width="56" height="44" rx="10" fill="#c9a227"/>
+            <rect x="46" y="58" width="68" height="244" rx="34" fill="#f1ebdd"/>
+            <g clip-path="url(#glass)">
+              <g class="pole-stripes">
+                <g fill="#b3392f"><path d="M40 40l80 40v28L40 68z"/><path d="M40 96l80 40v28L40 124z"/><path d="M40 152l80 40v28l-80-40z"/><path d="M40 208l80 40v28l-80-40z"/><path d="M40 264l80 40v28l-80-40z"/><path d="M40 320l80 40v28l-80-40z"/><path d="M40 376l80 40v28l-80-40z"/></g>
+                <g fill="#1f4e8c"><path d="M40 68l80 40v28L40 96z"/><path d="M40 124l80 40v28l-80-40z"/><path d="M40 180l80 40v28l-80-40z"/><path d="M40 236l80 40v28l-80-40z"/><path d="M40 292l80 40v28l-80-40z"/><path d="M40 348l80 40v28l-80-40z"/></g>
+              </g>
+            </g>
+            <rect x="46" y="58" width="68" height="244" rx="34" fill="url(#shine)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- A CASA -->
+    <section class="section alt" id="sobre">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">A casa</span>
+          <h2>Tradição no estilo, praticidade no horário</h2>
+          <div class="rule" aria-hidden="true"><i></i></div>
+          <p class="lead">Uma barbearia pensada para quem valoriza o tempo e a boa aparência.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3>Hora marcada</h3>
+            <p>Você escolhe o dia e a hora na agenda. Sem fila, sem espera longa.</p>
+          </article>
+          <article class="feature reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l9 9M5 20l9-9M14 13l6 7M14 11l6-7"/><circle cx="5" cy="4" r="1.6"/><circle cx="5" cy="20" r="1.6"/></svg>
+            <h3>Mão experiente</h3>
+            <p>Cortes clássicos e modernos, degradês e barba na navalha.</p>
+          </article>
+          <article class="feature reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c0-4 3-6 8-6s8 2 8 6M8 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0z"/></svg>
+            <h3>Ambiente à vontade</h3>
+            <p>Um lugar para relaxar, conversar e sair se sentindo bem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Serviços</span>
+          <h2>Tabela da casa</h2>
+          <div class="rule" aria-hidden="true"><i></i></div>
+        </div>
+
+        <ul class="price-list">
+          <li class="price-row reveal"><h3>Corte masculino</h3><span class="dots"></span><span class="price">R$ 45</span><p>Máquina e tesoura, com acabamento na navalha.</p></li>
+          <li class="price-row reveal"><h3>Barba</h3><span class="dots"></span><span class="price">R$ 35</span><p>Toalha quente, navalha e hidratação.</p></li>
+          <li class="price-row reveal"><h3>Corte + barba</h3><span class="dots"></span><span class="price">R$ 70</span><p>O combo completo, no mesmo horário.</p></li>
+          <li class="price-row reveal"><h3>Sobrancelha</h3><span class="dots"></span><span class="price">R$ 15</span><p>Alinhamento na navalha.</p></li>
+          <li class="price-row reveal"><h3>Pigmentação</h3><span class="dots"></span><span class="price">R$ 40</span><p>Cobertura de falhas na barba ou no cabelo.</p></li>
+          <li class="price-row reveal"><h3>Hidratação capilar</h3><span class="dots"></span><span class="price">R$ 30</span><p>Tratamento rápido para cabelo e couro cabeludo.</p></li>
+        </ul>
+        <p class="note">Serviços e valores fictícios, criados para esta demonstração.</p>
+      </div>
+    </section>
+
+    <!-- AGENDA (lógica em script.js) -->
+    <section class="section alt" id="agenda">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Agenda</span>
+          <h2>Marque o seu horário</h2>
+          <div class="rule" aria-hidden="true"><i></i></div>
+          <p class="lead">Escolha o dia, o horário livre e o serviço. A agenda abaixo é uma simulação.</p>
+        </div>
+
+        <div class="schedule-grid">
+          <div class="panel reveal">
+            <form id="agenda-form" novalidate>
+              <p class="slots-title" id="dias-titulo">1. Escolha o dia</p>
+              <div class="days" id="dias" role="group" aria-labelledby="dias-titulo"></div>
+
+              <p class="slots-title" id="slots-titulo">2. Escolha o horário</p>
+              <p class="fake-note" id="slots-dica" aria-live="polite" style="margin:0 0 .8rem;">Escolha um dia para ver os horários.</p>
+              <div class="slots" id="slots" role="radiogroup" aria-labelledby="slots-titulo"></div>
+              <p class="error" id="erro-horario" role="alert"></p>
+
+              <p class="slots-title">3. Seus dados</p>
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="servico">Serviço</label>
+                  <select id="servico" name="servico" aria-describedby="erro-servico">
+                    <option value="">Escolha…</option>
+                    <option>Corte masculino</option>
+                    <option>Barba</option>
+                    <option>Corte + barba</option>
+                    <option>Sobrancelha</option>
+                    <option>Pigmentação</option>
+                    <option>Hidratação capilar</option>
+                  </select>
+                  <p class="error" id="erro-servico"></p>
+                </div>
+                <div class="field full">
+                  <label for="nome">Nome</label>
+                  <input id="nome" name="nome" type="text" autocomplete="off" aria-describedby="erro-nome">
+                  <p class="error" id="erro-nome"></p>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" type="submit" style="margin-top:1rem;">Confirmar horário</button>
+              <p class="form-status" id="agenda-status" role="status" hidden></p>
+            </form>
+          </div>
+
+          <aside class="panel reveal">
+            <h3>Funcionamento</h3>
+            <ul class="info-list">
+              <li><span>Segunda a sexta</span><span>9h às 19h</span></li>
+              <li><span>Sábado</span><span>9h às 17h</span></li>
+              <li><span>Domingo</span><span>Fechado</span></li>
+              <li><span>Endereço</span><span>Endereço fictício</span></li>
+            </ul>
+            <p class="fake-note">Esta barbearia não existe. Os horários ocupados são inventados e o site foi criado como demonstração do trabalho da HelpTech.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Corte Nobre — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

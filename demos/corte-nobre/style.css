@@ -1,0 +1,207 @@
+/* ==========================================================
+   Corte Nobre — style.css  (PROJETO DEMONSTRATIVO / FICTÍCIO)
+   Identidade própria: preto + dourado latão, visual de barbearia clássica.
+   1. Variáveis   2. Base   3. Faixa demo   4. Navegação
+   5. Hero        6. Diferenciais  7. Serviços  8. Agenda
+   9. Rodapé     10. Animação  11. Responsivo
+   ========================================================== */
+
+/* 1. VARIÁVEIS ------------------------------------------- */
+:root {
+  --bg: #0c0b0a;
+  --bg-2: #14120f;
+  --card: #1b1814;
+  --line: rgba(241, 235, 221, 0.13);
+  --gold: #c9a227;      /* cor principal (dourado latão) */
+  --gold-2: #e6c35c;
+  --cream: #f1ebdd;
+  --muted: #aaa192;
+  --red: #b3392f;       /* detalhe do poste de barbeiro */
+
+  --font-title: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --nav-h: 72px;
+}
+
+/* 2. BASE ------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-title); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; margin: 0 0 0.5em; font-weight: 600; }
+h1 { font-size: clamp(2.8rem, 8vw, 5.6rem); }
+h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); }
+h3 { font-size: 1.3rem; }
+p { margin: 0 0 1em; }
+a { color: var(--gold-2); }
+svg { display: block; max-width: 100%; }
+
+:focus-visible { outline: 3px solid var(--gold-2); outline-offset: 3px; }
+
+.container { width: min(100% - 2.5rem, 1100px); margin-inline: auto; }
+.section { padding: clamp(4rem, 9vw, 6.5rem) 0; }
+.alt { background: var(--bg-2); }
+.eyebrow { display: inline-block; font-family: var(--font-title); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.85rem; color: var(--gold); margin-bottom: 0.8rem; }
+.lead { color: var(--muted); font-size: 1.2rem; max-width: 34rem; }
+
+/* detalhe: linha dourada com losango */
+.rule { display: flex; align-items: center; gap: 0.8rem; color: var(--gold); margin: 0 0 1.6rem; }
+.rule::before, .rule::after { content: ""; height: 1px; width: 56px; background: var(--gold); }
+.rule i { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.85rem 1.8rem; border: 2px solid var(--gold);
+  font: 600 1rem var(--font-title); letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; background: transparent; color: var(--gold-2);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--gold); color: #17120a; }
+.btn-primary:hover { background: var(--gold-2); border-color: var(--gold-2); }
+.btn-ghost:hover { background: rgba(201, 162, 39, 0.12); }
+
+/* 3. FAIXA "PROJETO DEMONSTRATIVO" ------------------------- */
+.demo-bar {
+  background: #0b1630; color: #cfe3ff; font: 500 0.88rem var(--font-body);
+  padding: 0.55rem 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem;
+  justify-content: center; align-items: center; text-align: center;
+}
+.demo-bar a { color: #6fd0ff; font-weight: 700; }
+
+/* 4. NAVEGAÇÃO ---------------------------------------------- */
+.nav { position: sticky; top: 0; z-index: 50; height: var(--nav-h); background: rgba(12, 11, 10, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.logo { font-family: var(--font-title); font-weight: 700; font-size: 1.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream); text-decoration: none; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 1.7rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font: 500 0.95rem var(--font-title); letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold-2); }
+.nav-links .btn { color: #17120a; padding: 0.5rem 1.2rem; font-size: 0.9rem; }
+.nav-toggle { display: none; background: transparent; border: 1px solid var(--line); color: var(--cream); width: 44px; height: 44px; font-size: 1.3rem; cursor: pointer; }
+
+/* 5. HERO ---------------------------------------------------- */
+.hero {
+  overflow: hidden;
+  padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
+  background:
+    radial-gradient(40rem 26rem at 88% 30%, rgba(201, 162, 39, 0.2), transparent 62%),
+    repeating-linear-gradient(135deg, transparent 0 22px, rgba(241, 235, 221, 0.018) 22px 23px);
+}
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hero h1 em { color: var(--gold); font-style: normal; display: block; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+.open-badge { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.35rem 1rem; border: 1px solid var(--line); font: 500 0.9rem var(--font-title); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.4rem; }
+.open-badge::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #868e96; }
+.open-badge.is-open::before { background: #51cf66; box-shadow: 0 0 10px #51cf66; }
+.open-badge.is-closed::before { background: #ff6b6b; }
+
+.hero-art { max-width: 340px; margin-inline: auto; }
+.hero-art svg { width: 100%; filter: drop-shadow(0 24px 40px rgba(201, 162, 39, 0.25)); }
+.pole-stripes { animation: stripes 6s linear infinite; }
+@keyframes stripes { to { transform: translateY(-56px); } }
+
+/* 6. DIFERENCIAIS --------------------------------------------- */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.5rem; }
+.feature { padding: 2rem 1.6rem; background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--gold); }
+.feature p { color: var(--muted); margin: 0; }
+.feature svg { width: 40px; height: 40px; fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 1rem; }
+
+/* 7. SERVIÇOS (lista com preços) ------------------------------- */
+.price-list { list-style: none; margin: 2.4rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 3rem; }
+.price-row { display: grid; grid-template-columns: auto 1fr auto; gap: 0.8rem; align-items: baseline; }
+.price-row h3 { margin: 0; font-size: 1.25rem; }
+.price-row .dots { border-bottom: 2px dotted rgba(241, 235, 221, 0.28); transform: translateY(-4px); }
+.price-row .price { font: 600 1.35rem var(--font-title); color: var(--gold-2); }
+.price-row p { grid-column: 1 / -1; margin: 0.1rem 0 0; color: var(--muted); font-size: 0.95rem; }
+.note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 2.2rem; }
+
+/* 8. AGENDA ----------------------------------------------------- */
+.schedule-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(1.5rem, 4vw, 3rem); margin-top: 2.4rem; align-items: start; }
+.panel { background: var(--card); border: 1px solid var(--line); padding: clamp(1.4rem, 3vw, 2.2rem); }
+.panel h3 { color: var(--gold-2); }
+
+.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; margin-bottom: 1.6rem; }
+.day {
+  display: grid; gap: 0.1rem; justify-items: center; padding: 0.7rem 0.2rem;
+  border: 1px solid var(--line); background: transparent; color: var(--cream);
+  font: inherit; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+.day small { font: 500 0.78rem var(--font-title); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.day strong { font: 600 1.4rem var(--font-title); line-height: 1.1; }
+.day:hover:not(:disabled) { border-color: var(--gold); }
+.day[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #17120a; }
+.day[aria-pressed="true"] small { color: #3a2f10; }
+.day:disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
+
+.slots-title { font: 500 0.95rem var(--font-title); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.8rem; }
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 0.5rem; margin-bottom: 1.6rem; }
+.slot { position: relative; }
+.slot input { position: absolute; opacity: 0; pointer-events: none; }
+.slot span { display: block; text-align: center; padding: 0.6rem 0.3rem; border: 1px solid var(--line); font: 600 1.05rem var(--font-title); cursor: pointer; transition: all 0.2s; }
+.slot input:hover:not(:disabled) + span { border-color: var(--gold); }
+.slot input:checked + span { background: var(--gold); border-color: var(--gold); color: #17120a; }
+.slot input:focus-visible + span { outline: 3px solid var(--gold-2); outline-offset: 2px; }
+.slot input:disabled + span { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: grid; gap: 0.35rem; }
+.field.full { grid-column: 1 / -1; }
+.field label { font: 500 0.92rem var(--font-title); letter-spacing: 0.1em; text-transform: uppercase; }
+.field input, .field select { width: 100%; padding: 0.8rem 0.9rem; background: var(--bg); border: 1px solid var(--line); color: var(--cream); font: inherit; }
+.field input:focus, .field select:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.28); }
+.field [aria-invalid="true"] { border-color: #ff6b6b; }
+.error { color: #ff8787; font-size: 0.86rem; margin: 0; min-height: 1.2em; }
+
+.form-status { margin-top: 1.2rem; padding: 1rem 1.2rem; background: rgba(81, 207, 102, 0.12); border: 1px solid rgba(81, 207, 102, 0.45); color: #d3f9d8; }
+.form-status[hidden] { display: none; }
+
+.info-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+.info-list li { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line); }
+.info-list li span:first-child { color: var(--muted); }
+.fake-note { color: var(--muted); font-size: 0.9rem; margin: 1.2rem 0 0; }
+
+/* 9. RODAPÉ ------------------------------------------------------ */
+.footer { border-top: 1px solid var(--line); padding: 2.2rem 0; color: var(--muted); font-size: 0.95rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* 10. ANIMAÇÃO AO ROLAR (só com JavaScript ativo) --------------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* 11. RESPONSIVO --------------------------------------------------- */
+@media (max-width: 900px) {
+  .hero-grid, .schedule-grid { grid-template-columns: 1fr; }
+  .hero-art { order: -1; max-width: 220px; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .price-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .nav-toggle { display: inline-block; }
+  .nav-links {
+    position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 0.5rem 1.25rem 1.2rem; background: rgba(12, 11, 10, 0.98); border-bottom: 1px solid var(--line); display: none;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { display: block; padding: 0.85rem 0; }
+  .nav-links .btn { margin-top: 0.6rem; text-align: center; }
+}
+@media (max-width: 520px) {
+  .days { grid-template-columns: repeat(4, 1fr); }
+  .form-grid { grid-template-columns: 1fr; }
+}

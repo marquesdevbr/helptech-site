@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ritmo Fit — Academia (projeto demonstrativo)</title>
+  <meta name="description" content="Projeto demonstrativo da HelpTech: site de uma academia fictícia com grade de aulas, planos e pedido de aula experimental.">
+  <meta name="theme-color" content="#0a0a0b">
+  <!-- Impede que buscadores indexem este site fictício -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- FAIXA DE AVISO: deixa claro que é um projeto fictício -->
+  <div class="demo-bar">
+    <span>Projeto demonstrativo criado pela HelpTech. A academia, as aulas e os valores são fictícios.</span>
+    <a href="../../pages/projetos.html">← Voltar aos projetos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#topo">RITMO<span>FIT</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#modalidades">Modalidades</a></li>
+        <li><a href="#grade">Grade de aulas</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a class="btn btn-primary" href="#experimental"><span>Aula grátis</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <!-- preenchido pelo script.js conforme o horário -->
+          <p class="open-badge" id="open-badge">Verificando horário…</p>
+          <h1>Treine no <span class="accent">seu ritmo</span></h1>
+          <p class="lead">Musculação, aulas coletivas e professores por perto. Escolha seu plano, monte sua rotina e comece hoje.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#experimental"><span>Quero uma aula experimental</span></a>
+            <a class="btn btn-ghost" href="#grade"><span>Ver a grade</span></a>
+          </div>
+        </div>
+
+        <!-- Ilustração: halter + linha de batimentos (SVG, sem imagens externas) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <defs>
+              <linearGradient id="rf-red" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff2d55"/><stop offset="1" stop-color="#ff6a3d"/>
+              </linearGradient>
+            </defs>
+            <!-- losango de fundo -->
+            <polygon points="200,20 380,200 200,380 20,200" fill="none" stroke="#ff2d55" stroke-opacity=".35" stroke-width="2"/>
+            <polygon points="200,60 340,200 200,340 60,200" fill="#ff2d55" fill-opacity=".08" stroke="#ff2d55" stroke-opacity=".5" stroke-width="2"/>
+            <!-- halter (inclinado) -->
+            <g transform="rotate(-28 200 200)">
+              <rect x="95" y="190" width="210" height="20" rx="4" fill="#d9d9e0"/>
+              <rect x="70" y="150" width="34" height="100" rx="6" fill="url(#rf-red)"/>
+              <rect x="50" y="165" width="22" height="70" rx="5" fill="#ff2d55"/>
+              <rect x="296" y="150" width="34" height="100" rx="6" fill="url(#rf-red)"/>
+              <rect x="328" y="165" width="22" height="70" rx="5" fill="#ff2d55"/>
+            </g>
+            <!-- linha de batimentos -->
+            <path d="M10 330 H110 L135 285 L165 360 L195 300 L215 330 H390" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS (faixa vermelha inclinada) -->
+    <section class="perks" aria-label="Diferenciais da academia">
+      <div class="container perks-inner">
+        <div class="perk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg>
+          Avaliação inicial para montar seu treino
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.7 6 5.5"/></svg>
+          Professores presentes no salão
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Aulas coletivas de segunda a sábado
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Abre cedo, fecha tarde
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section class="section" id="modalidades">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Modalidades</span>
+          <h2>Um treino para cada <span class="accent">objetivo</span></h2>
+          <p class="lead">Da força ao alongamento: escolha uma ou combine várias.</p>
+        </div>
+
+        <div class="mod-grid">
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>
+            <h3>Musculação</h3>
+            <p>Área ampla com equipamentos para força e hipertrofia, de acesso livre no horário de funcionamento.</p>
+          </article>
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg>
+            <h3>Funcional</h3>
+            <p>Circuitos dinâmicos que trabalham o corpo todo, com intensidade ajustada ao seu nível.</p>
+          </article>
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3.5"/><circle cx="18" cy="17" r="3.5"/><path d="M6 17l4-8h5l3 8M10 9L8.5 6H6"/></svg>
+            <h3>Spinning</h3>
+            <p>Aula de bike indoor com música e ritmo, para ganhar fôlego e queimar energia.</p>
+          </article>
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3zM19 16a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3z"/></svg>
+            <h3>Dança</h3>
+            <p>Aulas animadas, com coreografias simples para quem quer se mexer e se divertir.</p>
+          </article>
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a2.2 2.2 0 1 0 0 4.4A2.2 2.2 0 0 0 12 3zM5 21c1-5 3-8 7-8s6 3 7 8M4 12c3 0 5-1 8-1s5 1 8 1"/></svg>
+            <h3>Yoga</h3>
+            <p>Respiração, equilíbrio e flexibilidade, em uma sala própria e tranquila.</p>
+          </article>
+          <article class="mod-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V6a2 2 0 0 1 4 0v3h3a4 4 0 0 1 4 4v1a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6v-3z"/></svg>
+            <h3>Boxe Fit</h3>
+            <p>Golpes e condicionamento em aula coletiva, sem contato e sem luta de verdade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADE DE AULAS (dados e filtros em script.js) -->
+    <section class="section alt" id="grade">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Grade semanal</span>
+          <h2>Escolha o <span class="accent">horário</span> que cabe na sua rotina</h2>
+        </div>
+
+        <div class="filter-block">
+          <p class="filter-label" id="lbl-mod">Modalidade</p>
+          <div class="chips" id="filtro-modalidade" role="group" aria-labelledby="lbl-mod"></div>
+          <p class="filter-label" id="lbl-dia">Dia da semana</p>
+          <div class="chips" id="filtro-dia" role="group" aria-labelledby="lbl-dia"></div>
+        </div>
+
+        <!-- Aviso lido por leitores de tela quando o filtro muda -->
+        <p class="grade-status" id="grade-status" aria-live="polite"></p>
+        <ul class="grade-list" id="grade-lista"></ul>
+
+        <p class="fake-note">Grade fictícia, criada para esta demonstração. A musculação é livre durante todo o horário de funcionamento.</p>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Planos</span>
+          <h2>Pague menos <span class="accent">no anual</span></h2>
+        </div>
+
+        <!-- Alternância mensal / anual -->
+        <div class="billing" role="group" aria-label="Periodicidade do plano">
+          <button type="button" data-billing="mensal" aria-pressed="true">Mensal</button>
+          <button type="button" data-billing="anual" aria-pressed="false">Anual<small>economize</small></button>
+        </div>
+        <p class="sr-only" id="plano-status" aria-live="polite"></p>
+
+        <div class="plans">
+          <article class="plan reveal" data-plan data-mensal="89" data-anual="69">
+            <h3>Básico</h3>
+            <p class="price"><span class="price-value">R$ 89</span> <small>/mês</small></p>
+            <p class="price-note"></p>
+            <ul>
+              <li>Musculação livre</li>
+              <li>Avaliação inicial</li>
+              <li>Vestiário com armários</li>
+            </ul>
+            <a class="btn btn-ghost" href="#experimental"><span>Começar com uma aula grátis</span></a>
+          </article>
+
+          <article class="plan featured reveal" data-plan data-mensal="129" data-anual="99">
+            <span class="tag">Mais escolhido</span>
+            <h3>Plus</h3>
+            <p class="price"><span class="price-value">R$ 129</span> <small>/mês</small></p>
+            <p class="price-note"></p>
+            <ul>
+              <li>Tudo do Básico</li>
+              <li>Todas as aulas coletivas</li>
+              <li>Acompanhamento do treino</li>
+            </ul>
+            <a class="btn btn-primary" href="#experimental"><span>Começar com uma aula grátis</span></a>
+          </article>
+
+          <article class="plan reveal" data-plan data-mensal="179" data-anual="139">
+            <h3>Premium</h3>
+            <p class="price"><span class="price-value">R$ 179</span> <small>/mês</small></p>
+            <p class="price-note"></p>
+            <ul>
+              <li>Tudo do Plus</li>
+              <li>Avaliação física mensal</li>
+              <li>Convite mensal para um amigo</li>
+            </ul>
+            <a class="btn btn-ghost" href="#experimental"><span>Começar com uma aula grátis</span></a>
+          </article>
+        </div>
+
+        <p class="fake-note">Valores fictícios, criados para esta demonstração. A academia não existe.</p>
+      </div>
+    </section>
+
+    <!-- AULA EXPERIMENTAL + HORÁRIOS -->
+    <section class="section trial" id="experimental">
+      <div class="container trial-grid">
+        <div class="reveal">
+          <span class="eyebrow">Aula experimental</span>
+          <h2>Venha <span class="accent">testar</span> sem compromisso</h2>
+          <p class="lead">Escolha a modalidade e o dia. Confira a grade acima para ver em quais dias cada aula acontece.</p>
+
+          <h3 style="margin-top:2rem;">Funcionamento</h3>
+          <ul class="hours">
+            <li><span>Segunda a sexta</span><span>5h30 às 22h30</span></li>
+            <li><span>Sábado</span><span>8h às 14h</span></li>
+            <li><span>Domingo</span><span>Fechado</span></li>
+            <li><span>Endereço</span><span>Endereço fictício</span></li>
+          </ul>
+        </div>
+
+        <!-- Formulário (validação em script.js; nada é enviado) -->
+        <div class="panel reveal">
+          <form id="trial-form" novalidate>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" autocomplete="off" aria-describedby="erro-nome">
+                <p class="error" id="erro-nome"></p>
+              </div>
+              <div class="field full">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="off" aria-describedby="erro-email">
+                <p class="error" id="erro-email"></p>
+              </div>
+              <div class="field">
+                <label for="modalidade">Modalidade</label>
+                <select id="modalidade" name="modalidade" aria-describedby="erro-modalidade">
+                  <option value="">Escolha…</option>
+                </select>
+                <p class="error" id="erro-modalidade"></p>
+              </div>
+              <div class="field">
+                <label for="dia">Dia</label>
+                <select id="dia" name="dia" aria-describedby="erro-dia">
+                  <option value="">Escolha…</option>
+                </select>
+                <p class="error" id="erro-dia"></p>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top:1.2rem;"><span>Pedir aula experimental</span></button>
+            <p class="form-status" id="trial-status" role="status" hidden></p>
+            <p class="fake-note">Esta academia não existe. Nenhum dado é enviado ou guardado.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Ritmo Fit — negócio fictício</span>
+      <span>Projeto demonstrativo desenvolvido pela <a href="../../index.html">HelpTech</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

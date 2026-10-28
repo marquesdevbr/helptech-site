@@ -68,3 +68,22 @@
   /* no celular, título e detalhes ficam um embaixo do outro */
   .service { grid-template-columns: 1fr; gap: 1.2rem; }
 }
+
+
+/* Página Sobre: empilha os cartões em telas menores */
+@media (max-width: 860px) {
+  .about-pair, .team-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Página Contato: formulário e etapas ficam uma embaixo da outra */
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .form-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato — HelpTech</title>
+  <meta name="description" content="Fale com a HelpTech: conte o que você precisa e veja como funciona o nosso atendimento, da proposta à entrega.">
+  <meta name="theme-color" content="#050a18">
+
+  <link rel="icon" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:ital,wght@0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+
+  <!-- Atenção: como esta página está dentro de "pages/", os caminhos começam com "../" -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body data-root="../" data-page="contato">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- O menu é montado pelo js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contato</span>
+        <h1>Conte o que você precisa</h1>
+        <p class="lead">
+          Descreva o seu pedido e a gente responde com o caminho mais simples.
+          Quanto mais claro o pedido, mais fácil montar uma proposta.
+        </p>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO + COMO FUNCIONA O ATENDIMENTO -->
+    <section class="section">
+      <div class="container contact-grid">
+
+        <!-- FORMULÁRIO (lógica em js/contato.js) -->
+        <div class="card contact-card reveal">
+          <h2>Envie sua mensagem</h2>
+
+          <form id="contato-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" aria-describedby="erro-nome">
+                <p class="field-error" id="erro-nome"></p>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="erro-email">
+                <p class="field-error" id="erro-email"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto" aria-describedby="erro-assunto">
+                <option value="">Escolha…</option>
+                <option>Criação de site</option>
+                <option>Automação de processos</option>
+                <option>Suporte técnico</option>
+                <option>Otimização de computador</option>
+                <option>Produtos (componentes e periféricos)</option>
+                <option>Outro assunto</option>
+              </select>
+              <p class="field-error" id="erro-assunto"></p>
+            </div>
+
+            <div class="field">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="5" aria-describedby="erro-mensagem"></textarea>
+              <p class="field-error" id="erro-mensagem"></p>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+
+            <!-- Resposta ao enviar (preenchida pelo js/contato.js) -->
+            <p class="form-status" id="contato-status" role="status" hidden></p>
+          </form>
+        </div>
+
+        <!-- COMO FUNCIONA O ATENDIMENTO (baseado no Plano de Negócios) -->
+        <aside class="contact-side reveal">
+          <h2>Como é o atendimento</h2>
+          <ol class="contact-steps">
+            <li><strong>Entendimento</strong><span>Registramos o seu pedido e entendemos a necessidade.</span></li>
+            <li><strong>Proposta</strong><span>Enviamos um orçamento com serviços, prazo e condições discriminados.</span></li>
+            <li><strong>Aceite</strong><span>Só começamos depois da sua aprovação e da confirmação das condições combinadas.</span></li>
+            <li><strong>Entrega</strong><span>Entregamos o combinado e acompanhamos o resultado.</span></li>
+          </ol>
+          <p class="side-note">
+            Este formulário é uma demonstração do projeto. Os canais oficiais de
+            atendimento serão divulgados quando a empresa estiver em operação.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/contato.js" defer></script>
+</body>
+</html>

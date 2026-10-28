@@ -683,3 +683,77 @@ main { flex: 1; }
 
    /* Link "Ver demonstração" fica sempre no pé do cartão de projeto */
    .project-card .card-link { margin-top: auto; padding-top: 1rem; }
+
+   
+/* ==========================================================
+   17. PÁGINA SOBRE — missão/visão, valores e equipe
+   ========================================================== */
+
+/* missão e visão: dois cartões lado a lado */
+.about-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.about-card { padding: 2rem 1.8rem; }
+.about-card h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
+.about-card p { font-size: 1.08rem; line-height: 1.7; }
+
+/* valores: grade de 3 colunas (2 linhas) */
+.values-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.value h3 { font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--cyan-soft); }
+
+/* equipe: 3 cartões com inicial no lugar de foto */
+.team-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.team-card { text-align: center; padding: 2rem 1.4rem; }
+.team-card h3 { margin: 0.9rem 0 0.2rem; font-size: 1.3rem; }
+.team-card .role { color: var(--cyan-soft); font-weight: 500; }
+.avatar {
+  display: inline-grid; place-items: center;
+  width: 72px; height: 72px; border-radius: 50%;
+  font: 800 1.9rem var(--font-title); color: #fff;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  box-shadow: 0 0 0 4px rgba(8, 168, 248, 0.18);
+}
+
+
+/* ==========================================================
+   18. PÁGINA CONTATO — formulário e etapas do atendimento
+   ========================================================== */
+
+/* duas colunas: formulário (maior) + etapas */
+.contact-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.contact-card { padding: clamp(1.4rem, 3vw, 2.2rem); }
+.contact-card h2, .contact-side h2 { font-size: 1.5rem; margin-bottom: 1.2rem; }
+
+/* campos */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: grid; gap: 0.35rem; margin-bottom: 1rem; }
+.field label { font-weight: 600; font-size: 0.95rem; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 0.8rem 0.9rem;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  font: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field textarea { resize: vertical; min-height: 130px; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(8, 168, 248, 0.25);
+}
+.field [aria-invalid="true"] { border-color: #ff6b6b; }
+.contact-card .field-error { color: #ff8e8e; font-size: 0.86rem; margin: 0; min-height: 1.2em; }
+
+/* mensagem de resposta ao enviar */
+.contact-card .form-status {
+  margin: 1.2rem 0 0; padding: 1rem 1.2rem; border-radius: var(--radius-sm);
+  background: rgba(81, 207, 102, 0.12); border: 1px solid rgba(81, 207, 102, 0.45); color: #d3f9d8;
+}
+.contact-card .form-status[hidden] { display: none; }
+
+/* etapas do atendimento */
+.contact-steps { list-style: none; counter-reset: passo; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1.1rem; }
+.contact-steps li { counter-increment: passo; position: relative; padding-left: 3rem; display: grid; gap: 0.15rem; }
+.contact-steps li::before {
+  content: counter(passo); position: absolute; left: 0; top: 0;
+  width: 2.1rem; height: 2.1rem; display: grid; place-items: center; border-radius: 50%;
+  font: 700 1rem var(--font-title); color: #fff; background: linear-gradient(135deg, var(--blue), var(--cyan));
+}
+.contact-steps strong { font-family: var(--font-title); }
+.contact-steps span { color: var(--muted); font-size: 0.96rem; }
+.side-note { color: var(--muted); font-size: 0.9rem; padding: 1rem 1.1rem; border: 1px dashed var(--line-strong); border-radius: var(--radius-sm); margin: 0; }
